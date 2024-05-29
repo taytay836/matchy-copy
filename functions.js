@@ -38,13 +38,32 @@ function replace(animals, name, replacement) {
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+function remove(animals, name) {
+    for (let i = 0; i < animals.length; i++) {
+        if (animals[i].name === name) {
+            animals.splice(i, 1);
+            return;
+        }
+    }
+}
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+function add(animals, animal) {
+    if (!animal.name || animal.name.length === 0 || !animal.species || animal.species.length === 0) {
+        return;
+    }
 
+    for (let existingAnimal of animals) {
+        if (existingAnimal.name === animal.name) {
+            return;
+        }
+    }
+
+    animals.push(animal);
+}
 
 
 /**

@@ -92,17 +92,16 @@ console.log(animals.length);
 //////////////////////////////////////////////////////////////////////
 //array because it easily holds names and can be easily modified
 var friends = [];
-function getRandom(array){
-  const minCeiled = Math.ceil(0);
-  const maxFloored = Math.floor(array.length);
-  var i = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
-  return array[i]
+
+function getRandom(arr) {
+    return Math.floor(Math.random() * arr.length);
 }
-friends.push(animals[getRandom(animals)['name']])
-animals[2]['friends'] = friends;
-console.log(friends)
-console.log(animals)
-console.log(Math.floor(Math.random() * animals.length))
+
+friends.push(animals[getRandom(animals)].name);
+console.log(friends);
+
+animals[0]['friends'] = friends;
+console.log(animals);
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
