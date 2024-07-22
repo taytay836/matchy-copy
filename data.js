@@ -13,7 +13,7 @@
 //////////////////////////////////////////////////////////////////////
 var animal = {}//empty object
 //add property
-animal.species = 'duck';
+animal.species = 'bear';
 animal['name'] = 'Mr. Black';
 //add empty array
 animal.noises = [];
@@ -66,13 +66,56 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 var animals = []; //create an empty animals
 animals.push(animal); // add 1st animal object
+//log
+console.log(animals)
+var duck = {
+  species: 'duck',
+  name: 'Jerome',
+  noises: ['quack', 'honk', 'sneeze', 'woosh']
+};
+// add duck to animals
+animals.push(duck);
+console.log(animals)
+//add 2 more animals
+var cat = {
+  species: 'cat',
+  name: 'Whiskers',
+  noises: ['meow', 'purr']
+};
+//2nd animal
+var dog = {
+  species: 'dog',
+  name: 'Rex',
+  noises: ['bark', 'growl']
 
-
+}
+//add cat and dog to animals
+animals.push(cat, dog);
+//print animals array
+console.log(animals);
+console.log(animals.length);
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+//create friends arr
+var friends = [];
+//get random function from mozilla
+function getRandom(array){
+  var randomIndex = Math.floor(Math.random() * array.length);
+  //return radom animal object
+  return array[randomIndex]
+}
+//get random obj
+var randomAnimal = getRandom(animals);
+//add randon name
+friends.push(randomAnimal.name);
+//print
+console.log(friends)
+//add froends list property
+animals[0].friends = friends
+//print the update
+console.log(animals)
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
